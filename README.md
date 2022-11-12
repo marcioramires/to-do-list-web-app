@@ -2,7 +2,8 @@
 
 Projeto front-end que disponibiliza ao usuário a criação de uma lista de tarefas pessoal.
 #
-![ecommerce01](https://user-images.githubusercontent.com/113479357/201253952-592a3eef-4e44-4089-b6aa-9db9649bfe78.png)
+![Screenshot 2022-11-12 143929](https://user-images.githubusercontent.com/113479357/201492932-1892eff7-a3fa-448d-9b60-3fe6005249f4.png)
+
 #
 # 🚀 Tecnologias:
  
