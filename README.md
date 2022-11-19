@@ -25,5 +25,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 #
 #
 # 😎 Deploy:
-- [To Do List / Lista de Tarefas](https://marcioramires.github.io/to-do-list-web-app/)
+- [To Do List / Lista de Tarefas](https://to-do-list-mrgt.netlify.app/)
 #
