@@ -93,34 +93,36 @@ const refreshTasksFromLocalStorage = () => {
     date.innerText = today.toDateString()
     dateContainer.appendChild(date)
 
-    const tasksFromLocalStorage = JSON.parse(localStorage.getItem('tasks'))
+    let tasksFromLocalStorage = JSON.parse(localStorage.getItem('tasks'))
 
-    for (const task of tasksFromLocalStorage) {
-        const taskItemContainer = document.createElement('div')
-        taskItemContainer.classList.add(('task-list'))
+    if (tasksFromLocalStorage === null) { tasksFromLocalStorage = [] }
+    else {
+        for (const task of tasksFromLocalStorage) {
+            const taskItemContainer = document.createElement('div')
+            taskItemContainer.classList.add(('task-list'))
 
-        const item = document.createElement('p')
-        item.classList.add('task-item')
-        item.innerText = task.description
+            const item = document.createElement('p')
+            item.classList.add('task-item')
+            item.innerText = task.description
 
-        if (task.isCompleted) {
-            item.classList.add('completed')
+            if (task.isCompleted) {
+                item.classList.add('completed')
+            }
+
+            item.addEventListener('click', () => handleClick(item))
+
+            const deleteItem = document.createElement('i')
+            deleteItem.classList.add('fa-regular')
+            deleteItem.classList.add('fa-trash-can')
+            deleteItem.classList.add('delete-item')
+
+            deleteItem.addEventListener('click', () => handleClickDelete(taskItemContainer, item))
+
+            taskItemContainer.appendChild(item)
+            taskItemContainer.appendChild(deleteItem)
+            taskListContainer.appendChild(taskItemContainer)
         }
-
-        item.addEventListener('click', () => handleClick(item))
-
-        const deleteItem = document.createElement('i')
-        deleteItem.classList.add('fa-regular')
-        deleteItem.classList.add('fa-trash-can')
-        deleteItem.classList.add('delete-item')
-
-        deleteItem.addEventListener('click', () => handleClickDelete(taskItemContainer, item))
-
-        taskItemContainer.appendChild(item)
-        taskItemContainer.appendChild(deleteItem)
-        taskListContainer.appendChild(taskItemContainer)
     }
-
 
 }
 
